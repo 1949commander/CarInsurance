@@ -4,11 +4,11 @@
     <EntitySetMapping Name="Insurees">
       <EntityTypeMapping TypeName="Model.Insuree">
         <MappingFragment StoreEntitySet="Insurees">
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
-          <ScalarProperty Name="DatOfBirth" ColumnName="DatOfBirth" />
           <ScalarProperty Name="CarYear" ColumnName="CarYear" />
           <ScalarProperty Name="CarMake" ColumnName="CarMake" />
           <ScalarProperty Name="CarModel" ColumnName="CarModel" />

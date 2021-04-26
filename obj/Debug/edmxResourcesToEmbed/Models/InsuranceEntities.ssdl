@@ -8,7 +8,7 @@
     <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="DatOfBirth" Type="datetime" Nullable="false" />
+    <Property Name="DateOfBirth" Type="datetime" Nullable="false" />
     <Property Name="CarYear" Type="int" Nullable="false" />
     <Property Name="CarMake" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="CarModel" Type="nvarchar" MaxLength="50" Nullable="false" />

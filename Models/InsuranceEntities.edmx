@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Insurees">
           <Key>
             <PropertyRef Name="Id" />
@@ -13,7 +13,7 @@
           <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="DatOfBirth" Type="datetime" Nullable="false" />
+          <Property Name="DateOfBirth" Type="datetime" Nullable="false" />
           <Property Name="CarYear" Type="int" Nullable="false" />
           <Property Name="CarMake" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="CarModel" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -25,8 +25,7 @@
         <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="Insurees" EntityType="Self.Insurees" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -38,7 +37,6 @@
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DatOfBirth" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="CarYear" Type="Int32" Nullable="false" />
           <Property Name="CarMake" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="CarModel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -46,6 +44,7 @@
           <Property Name="SpeedingTickets" Type="Int32" Nullable="false" />
           <Property Name="CoverageType" Type="Boolean" Nullable="false" />
           <Property Name="Quote" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityContainer Name="InsuranceEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Insurees" EntityType="Self.Insuree" />
@@ -59,11 +58,11 @@
           <EntitySetMapping Name="Insurees">
             <EntityTypeMapping TypeName="Model.Insuree">
               <MappingFragment StoreEntitySet="Insurees">
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
-                <ScalarProperty Name="DatOfBirth" ColumnName="DatOfBirth" />
                 <ScalarProperty Name="CarYear" ColumnName="CarYear" />
                 <ScalarProperty Name="CarMake" ColumnName="CarMake" />
                 <ScalarProperty Name="CarModel" ColumnName="CarModel" />

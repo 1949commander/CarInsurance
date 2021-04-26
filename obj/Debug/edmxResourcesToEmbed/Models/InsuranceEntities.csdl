@@ -8,7 +8,6 @@
     <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="DatOfBirth" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="CarYear" Type="Int32" Nullable="false" />
     <Property Name="CarMake" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="CarModel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -16,6 +15,7 @@
     <Property Name="SpeedingTickets" Type="Int32" Nullable="false" />
     <Property Name="CoverageType" Type="Boolean" Nullable="false" />
     <Property Name="Quote" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
   <EntityContainer Name="InsuranceEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Insurees" EntityType="Self.Insuree" />

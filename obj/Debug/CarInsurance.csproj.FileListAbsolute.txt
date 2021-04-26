@@ -76,8 +76,8 @@ C:\Users\breev\source\repos\CarInsurance\CarInsurance\bin\System.Web.WebPages.Ra
 C:\Users\breev\source\repos\CarInsurance\CarInsurance\bin\Newtonsoft.Json.xml
 C:\Users\breev\source\repos\CarInsurance\CarInsurance\bin\Antlr3.Runtime.pdb
 C:\Users\breev\source\repos\CarInsurance\CarInsurance\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\breev\source\repos\CarInsurance\CarInsurance\obj\Debug\CarInsurance.csprojAssemblyReference.cache
 C:\Users\breev\source\repos\CarInsurance\CarInsurance\obj\Debug\CarInsurance.csproj.CoreCompileInputs.cache
 C:\Users\breev\source\repos\CarInsurance\CarInsurance\obj\Debug\CarInsurance.csproj.CopyComplete
 C:\Users\breev\source\repos\CarInsurance\CarInsurance\obj\Debug\CarInsurance.dll
 C:\Users\breev\source\repos\CarInsurance\CarInsurance\obj\Debug\CarInsurance.pdb
+C:\Users\breev\source\repos\CarInsurance\CarInsurance\obj\Debug\CarInsurance.csprojAssemblyReference.cache
