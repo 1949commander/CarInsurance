@@ -36,8 +36,125 @@ namespace CarInsurance.Controllers
         }
 
         // GET: Insuree/Create
-        public ActionResult Create()
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,EmailAddress,DateOfBirth,CarYear,CarMake,CarModel,DUI,SpeedingTickets,CoverageType,Quote")] Insuree insuree)
         {
+            using (InsuranceEntities db = new InsuranceEntities())
+            {
+                var create = new Create();
+                create.Id = insuree.Id;
+                create.FirstName = insuree.FirstName;
+                create.LastName = insuree.LastName;
+                create.EmailAddress = insuree.EmailAddress;
+                create.DateOfBirth = insuree.DateOfBirth;
+                create.CarYear = insuree.CarYear;
+                create.CarMake = insuree.CarMake;
+                create.CarModel = insuree.CarModel;
+                create.DUI = Convert.ToBoolean(insuree.DUI);
+                create.SpeedingTickets = insuree.SpeedingTickets;
+                create.CoverageType = Convert.ToBoolean(insuree.CoverageType);
+                create.Quote = insuree.Quote;
+
+                decimal baseRate = 50.00m;
+                decimal sumRate;
+
+
+
+
+                var today = DateTime.Today;
+                var age = today.Year - create.DateOFBirth.Year;
+                if (create.DateOFBirth.Date > today.AddYears(-age)) age--;
+
+                //DECISION 1
+                //"Is age 18 or younger?"
+                if (age <= 18)
+                {
+                    sumRate = baseRate + 100.00m;
+
+                }
+                else
+                {
+                    sumRate = baseRate;
+
+                }
+
+                //DECISION 2
+                //"Is age between 19 and 25?"
+                if ((age - 19) * (age - 25) <= 0)
+                {
+                    sumRate += 50.00m;
+
+                }
+
+
+                //Decision 3
+                //"Is persons Age Over 25?"
+                if (age > 25)
+                {
+                    sumRate += 25.00m;
+
+                }
+
+
+                // DECISION 4 AND 5
+                //"Is Car Year Outside of range 2000 to 2015?"
+
+                if ((create.CarYear - 2000) * (create.CarYear - 2015) >= 0)
+                {
+                    sumRate += 25.00m;
+
+                }
+
+
+                // DECISION 6
+                //"Is Make Porsche?"
+
+                if (create.CarMake == "porsche")
+                {
+                    sumRate += 25.00m;
+
+                }
+
+
+                // DECISION 7
+                //"Is Model 911 Carrera?"
+
+                if (create.CarModel == "911 carrera")
+                {
+                    sumRate += 25.00m;
+                }
+
+
+                // DECISION 8
+                //"How Many Speeding Tickets?"
+
+                if (create.SpeedingTickets > 0)
+                {
+                    decimal ticketsFee = create.SpeedingTickets * 10.00m;
+                    sumRate += ticketsFee;
+                }
+
+                // DECISION 9
+                //"Have you had a DUI?"
+
+                if (create.DUI == true)
+                {
+                    sumRate *= 1.25m;
+                }
+
+                // DECISION 10
+                //"Full Coverage?"
+
+
+                if (create.CoverageType == true)
+                {
+                    sumRate *= 1.50m;
+                }
+
+                create.Quote = sumRate;
+                
+
+            }
+
             return View();
         }
 
@@ -123,5 +240,6 @@ namespace CarInsurance.Controllers
             }
             base.Dispose(disposing);
         }
+
     }
 }
